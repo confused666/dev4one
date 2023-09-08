@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>上传成功</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+        }
+        .image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+        .info {
+            margin-top: 20px;
+        }
+        .info p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .info span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>上传成功</h1>
+        <img class="image" src="{{ url_for('static', filename=filename) }}" alt="上传的图片">
+        <div class="info">
+            <p><span>上传的图片名：</span>{{ filename }}</p>
+            <p><span>预测结果：</span>{{ pre_result }}</p>
+            <p><span>预测时间：</span>{{ "%.2f" % predict_time }} 秒</p>
+        </div>
+    </div>
+</body>
+</html>

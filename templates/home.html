@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>工业品组装缺陷检测服务 - 上传图片</title>
+        <style>
+            body {
+                background: linear-gradient(to bottom, #fff, #f5f5f5);
+                font-family: Arial, sans-serif;
+            }
+            h1 {
+                text-align: center;
+                margin: 50px 0 30px;
+                color: #333;
+            }
+            form {
+                max-width: 500px;
+                margin: 0 auto;
+                padding: 20px;
+                border-radius: 5px;
+                background-color: #fff;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            label {
+                display: block;
+                margin-bottom: 10px;
+                font-weight: bold;
+            }
+            input[type="file"] {
+                margin-bottom: 20px;
+            }
+            input[type="submit"] {
+                display: block;
+                margin: 20px auto 0;
+                background-color: #333;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                font-size: 16px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            input[type="submit"]:hover {
+                background-color: #444;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>上传图片</h1>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <div>
+                <label for="fileInput">设备上传</label>
+                <input type="file" id="fileInput" name="fileInput">
+            </div>
+            <div>
+                <label for="cameraInput">拍照上传</label>
+                <input type="file" id="cameraInput" capture="environment" accept="image/*" name="cameraInput">
+            </div>
+            <div>
+                <input type="submit" value="上传">
+            </div>
+        </form>
+    </body>
+</html>
